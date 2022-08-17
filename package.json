@@ -53,8 +53,5 @@
 	"devDependencies": {
 		"eslint": "^8.22.0",
 		"eslint-plugin-react": "^7.30.1"
-	},
-	"rules": {
-		"react/react-in-jsx-scope": "off"
 	}
 }

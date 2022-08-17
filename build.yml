@@ -1,0 +1,32 @@
+name: Build CBP
+
+on:
+  push:
+    branches: [Add-product-to-cart]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+      - name: Build packages
+        run: |
+          yarn build
+      - name: Upload production artifacts
+        uses: actions/upload-artifac@v2
+        with:
+          name: Static Build folder
+          path: |
+            ./build
