@@ -49,7 +49,6 @@ const SearchBar = () => {
 
 
 
-
                     <input
                         type='text'
                         className='search'

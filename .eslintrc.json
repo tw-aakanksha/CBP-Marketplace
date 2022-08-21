@@ -1,53 +1,61 @@
 {
-    "parser": "@babel/eslint-parser",
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "amd": true,
-        "jest": true,
-        "node": true,
-        "jasmine": true,
-        "es6": true
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "amd": true,
+    "jest": true,
+    "node": true,
+    "jasmine": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "requireConfigFile": false
+  },
 
-       
-    },
-    "extends": [
-        "plugin:react/recommended",
-        "eslint:recommended",
-        "plugin:prettier/recommended",
-        "plugin:react/jsx-runtime"
+  "plugins": ["react"],
+  "rules": {
+    "no-console": "warn",
+    "no-eval": "warn",
+    "no-debugger": "error",
+    "no-fallthrough": "warn",
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn",
+    "react/prop-types": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "printWidth": 80,
+        "trailingComma": "es5",
+        "semi": false,
+        "doubleQuote": true,
+        "jsxSingleQuote": true,
+        "singleQuote": false,
+        "useTabs": false,
+        "tabWidth": 4
+      }
     ],
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-         "ecmaFeatures": {
-            "jsx": true
-        },
-        "requireConfigFile": false
-    },
-    
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "no-console": "warn",
-        "no-eval": "warn",
-        "no-debugger": "error",
-        "no-fallthrough": "warn",
-        "no-unreachable": "warn",
-        "no-unused-vars": "warn",
-        "react/prop-types": "off",
-        "prettier/prettier": [ "error", { "endOfLine":"auto", "printWidth": 80, "trailingComma": "es5", "semi": false, "doubleQuote":true, "jsxSingleQuote": true, "singleQuote": false, "useTabs": false, "tabWidth":4 } ], 
-        "no-multiple-empty-lines": ["warn", { "max": 2, "maxEOF": 0 }],
-       "no-nested-ternary": "off",
-        "template-curly-spacing" : "off",
-        "indent" : 0
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
+    "no-nested-ternary": "off",
+    "template-curly-spacing": "off",
+    "indent": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
     }
+  }
 }

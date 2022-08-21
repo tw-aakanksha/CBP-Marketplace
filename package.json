@@ -35,6 +35,11 @@
     "lintFix": "eslint --ext .jsx,.js --ignore-path .gitignore ./src --fix -c .eslintrc.json",
     "prepare": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "$HOME/.talisman/bin/talisman_hook_script pre-commit && lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**.+(js|jsx)": [
       "npm run test",
