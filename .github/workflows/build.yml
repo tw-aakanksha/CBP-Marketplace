@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm install --package-lock-only
+        run: npm install
       - name: Build packages
         run: npm run-script build
       - name: Upload production artifacts
