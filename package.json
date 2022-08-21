@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "CI=true react-scripts test --env=jsdom  --passWithNoTests",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .jsx,.js --ignore-path .gitignore ./src -c .eslintrc.json",
     "lintFix": "eslint --ext .jsx,.js --ignore-path .gitignore ./src --fix -c .eslintrc.json",
@@ -42,6 +42,7 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
+      "npm test",
       "npm run lintFix",
       "git add"
     ],
