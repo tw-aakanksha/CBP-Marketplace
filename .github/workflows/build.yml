@@ -17,7 +17,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - name: Install dependencies
-        run: npm install
+        run: npm install --package-lock-only
       - name: Build packages
         run: npm run-script build
       - name: Upload production artifacts
