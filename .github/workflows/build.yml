@@ -21,7 +21,7 @@ jobs:
       - name: Build packages
         run: yarn build
       - name: Upload production artifacts
-        uses: actions/upload-artifac@v3
+        uses: actions/upload-artifact@v2
         with:
           name: Static Build folder
           path: ./build
