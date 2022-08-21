@@ -51,7 +51,7 @@ const SignupSeller = () => {
             const res = await createUserDocumentFromAuth_Seller(user, {
                 displayName,
             })
-            console.log(res)
+
             navigate("/loginseller")
             resetFormFields()
         } catch (error) {
@@ -61,7 +61,6 @@ const SignupSeller = () => {
                 alert("Enter Valid email address")
             else if (error.code === "auth/weak-password")
                 alert("Password should be min 6 characters")
-            else console.log("error", error.message)
         }
     }
 
@@ -169,12 +168,10 @@ const SignupSeller = () => {
     }
 
     const onModalClose = () => {
-        console.log("OnModalClose")
         setShow(false)
     }
 
     const onModalOk = () => {
-        console.log("OnModalOK")
         handleSubmit()
         setShow(false)
     }

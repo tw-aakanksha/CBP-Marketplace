@@ -41,10 +41,7 @@ const LoginSeller = () => {
             })
         )
         try {
-            const response = await signInAuthUserWithEmailAndPassword_Seller(
-                email,
-                password
-            )
+            await signInAuthUserWithEmailAndPassword_Seller(email, password)
             userLogInfo.setIsLoggedIn(true)
 
             navigate("/")
@@ -59,7 +56,7 @@ const LoginSeller = () => {
                     alert("Email not registered")
                     break
                 default:
-                    console.log("error", error.message)
+                // console.log("error", error.message)
             }
         }
     }

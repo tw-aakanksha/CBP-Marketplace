@@ -3,13 +3,11 @@ import "./product-details.css"
 
 const Details = ({ data }) => {
     const { id } = useParams()
-    console.log(data[id - 1])
     const product = data[id - 1]
 
     return (
         <div className='product-details'>
             <img src={product.imageUrl} alt={`${product.name}`} />
-            <button className='cart'>Add to Cart</button>
             <div className='product-details-footer'>
                 <h3 className='name'>{product.Info}</h3>
                 <hr style={{ width: "80%" }}></hr>

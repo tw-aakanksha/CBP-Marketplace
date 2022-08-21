@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 import "./signup-buyer-component.css"
 
@@ -48,10 +48,9 @@ const SignupBuyer = () => {
                 password
             )
 
-            const res = await createUserDocumentFromAuth_Buyer(user, {
+            await createUserDocumentFromAuth_Buyer(user, {
                 displayName,
             })
-            console.log(res)
 
             navigate("/loginbuyer")
             resetFormFields()
@@ -135,12 +134,10 @@ const SignupBuyer = () => {
     }
 
     const onModalClose = () => {
-        console.log("OnModalClose")
         setShow(false)
     }
 
     const onModalOk = () => {
-        console.log("OnModalOK")
         handleSubmit()
         setShow(false)
     }

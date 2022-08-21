@@ -8,7 +8,6 @@ import { UserContext } from "../../App"
 import { useContext } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { logout, selectUser } from "../../reducers/userSlice"
-import { useNavigate } from "react-router-dom"
 
 import LOGO from "..//..//assets/logo2.png"
 
@@ -25,12 +24,10 @@ const Toolbar = () => {
     const [showRegister, setShowRegister] = useState(false)
 
     const onModalCloseRegister = () => {
-        console.log("OnModalClose")
         setShowRegister(false)
     }
 
     const onModalOkRegister = () => {
-        console.log("OnModalOK")
         setShowRegister(false)
     }
     const handleShowRegister = () => setShowRegister(true)
@@ -38,7 +35,6 @@ const Toolbar = () => {
     const [showLogin, setShowLogin] = useState(false)
 
     const onModalCloseLogin = () => {
-        console.log("OnModalClose")
         setShowLogin(false)
     }
 
@@ -49,20 +45,8 @@ const Toolbar = () => {
 
     const signoutHandler = () => {
         userLogInfo.setIsLoggedIn(false)
-
         dispatch(logout())
     }
-
-    const navigate = useNavigate()
-    const [search, setSearch] = useState("")
-
-    const handleKeyPress = (event) => {
-        if (event.key === "Enter") {
-            console.log("enter press here! working ")
-            navigate("/filterdata", { state: { search } })
-        }
-    }
-
     return (
         <div className='toolbar-container'>
             <section className='sec'>

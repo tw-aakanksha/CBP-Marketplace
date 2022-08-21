@@ -9,6 +9,7 @@ const ModalPopUp = ({ show, handleClose, onModalClose, onModalOk }) => {
             <Modal.Header closeButton>
                 <Modal.Title></Modal.Title>
             </Modal.Header>
+
             <Modal.Body>Confirm the details!!!</Modal.Body>
             <Modal.Footer>
                 <Button variant='secondary' onClick={onModalClose}>

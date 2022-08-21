@@ -17,7 +17,6 @@ const SearchBar = () => {
 
             const updatedSuggestions = suggestions.slice(0, 5)
             setData(updatedSuggestions)
-            console.log(data)
         } else {
             setData([])
         }
@@ -27,7 +26,6 @@ const SearchBar = () => {
 
     const navigate = useNavigate()
     const handleClick = () => {
-        console.log("enter press here! working ")
         navigate("/filterdata", { state: { search } })
         setData([])
         setSearch("")
@@ -35,7 +33,6 @@ const SearchBar = () => {
 
     const handleKeyPress = (event) => {
         if (event.key === "Enter" && search.length != 0) {
-            console.log("enter press here! working ")
             navigate("/filterdata", { state: { search } })
             setData([])
             setSearch("")

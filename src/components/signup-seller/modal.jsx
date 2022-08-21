@@ -1,6 +1,5 @@
 import Modal from "react-bootstrap/Modal"
 import { Button } from "react-bootstrap"
-import { Link } from "react-router-dom"
 
 const ModalPopUp = ({ show, handleClose, onModalClose, onModalOk }) => {
     return (
