@@ -33,7 +33,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .jsx,.js --ignore-path .gitignore ./src -c .eslintrc.json",
     "lintFix": "eslint --ext .jsx,.js --ignore-path .gitignore ./src --fix -c .eslintrc.json",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rm -Rf node_modules/ && rm -f ./package-lock.json && npm cache clean -f",
+    "rebuild": "npm run clean && npm i"
   },
   "husky": {
     "hooks": {
