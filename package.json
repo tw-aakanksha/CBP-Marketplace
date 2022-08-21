@@ -24,28 +24,16 @@
 		"scss": "^0.2.4",
 		"use-immer": "^0.7.0",
 		"web-vitals": "^2.1.4",
-		"yarn": "^1.22.19",
-		"eslint": "5.16.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-loader": "3.0.2",
-		"eslint-plugin-cypress": "2.7.0",
-		"eslint-plugin-prettier": "^3.1.3",
-		"eslint-plugin-react": "7.16.0",
-		"babel-eslint": "10.0.3"
+		"yarn": "^1.22.19"
 	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"lint": "eslint --ignore-path .gitignore ./src -c configs/eslint/.eslintrc",
-		"lintFix": "eslint --ignore-path .gitignore ./src --fix -c configs/eslint/.eslintrc"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
+		"lint": "eslint --ext .jsx,.js --ignore-path .gitignore ./src -c .eslintrc.json",
+		"lintFix": "eslint --ext .jsx,.js --ignore-path .gitignore ./src --fix -c .eslintrc.json",
+		"prepare": "husky install"
 	},
 	"browserslist": {
 		"production": [
@@ -59,8 +47,39 @@
 			"last 1 safari version"
 		]
 	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
 	"devDependencies": {
-		"eslint": "^8.22.0",
-		"eslint-plugin-react": "^7.30.1"
+		"@babel/eslint-parser": "^7.5.4",
+		"@babel/preset-react": "^7.18.6",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-standard": "^16.0.3",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.30.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"husky": "^8.0.1",
+		"prettier": "^2.7.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "$HOME/.talisman/bin/talisman_hook_script pre-commit && lint-staged"
+		}
+	},
+	"lint-staged": {
+		"src/**.+(js|jsx)": [
+			"npm run test",
+			"npm run lint",
+			"git add"
+		],
+		"*.+(json|css|md)": [
+			"prettier --write",
+			"git add"
+		]
 	}
 }
