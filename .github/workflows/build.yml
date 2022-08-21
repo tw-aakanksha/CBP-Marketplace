@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build packages
-        run: npm build
+        run: npm run-script build
       - name: Upload production artifacts
         uses: actions/upload-artifact@v2
         with:
