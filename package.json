@@ -42,12 +42,13 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "npm run test",
-      "npm run lint",
-      "npm run lintFix"
+      "npm run lint -s",
+      "npm run lintFix",
+      "git add"
     ],
     "*.+(json|css|md)": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   },
   "browserslist": {

@@ -10,7 +10,6 @@ const Hatdata = () => {
                 )
             )}
         </div>
-        
     )
 }
 
