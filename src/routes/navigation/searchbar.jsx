@@ -32,6 +32,7 @@ const SearchBar = () => {
         setData([])
         setSearch("")
     }
+
     const handleKeyPress = (event) => {
         if (event.key === "Enter" && search.length != 0) {
             console.log("enter press here! working ")
