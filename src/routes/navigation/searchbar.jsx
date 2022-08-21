@@ -46,7 +46,9 @@ const SearchBar = () => {
         <div>
             <div>
                 <section className='container'>
-                  
+
+
+
                     <input
                         type='text'
                         className='search'
