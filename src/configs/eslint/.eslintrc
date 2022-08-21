@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "semi": "error",
+    "no-console": "warn",
+    "no-eval": "warn",
+    "no-debugger": "error",
+    "no-fallthrough": "warn",
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn"
+  },
+  "env": {
+    "amd": true,
+    "jest": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "es6": true
+    //"cypress/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ]
+}
