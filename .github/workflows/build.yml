@@ -17,14 +17,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
       - name: Install dependencies
-        run: |
-          yarn --frozen-lockfile
+        run: yarn --frozen-lockfile
       - name: Build packages
-        run: |
-          yarn build
+        run: yarn build
       - name: Upload production artifacts
-        uses: actions/upload-artifac@v2
+        uses: actions/upload-artifac@v3
         with:
           name: Static Build folder
-          path: |
-            ./build
+          path: ./build
