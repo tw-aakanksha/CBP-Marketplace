@@ -1,12 +1,10 @@
-
-import './backdrop.css'
-const Backdrop = ({sidebar}) =>{
+import "./backdrop.css"
+const Backdrop = ({ sidebar }) => {
     return (
-        
-        <div className={sidebar ? "backdrop backdrop--open": "backdropbackdrop"} >
-
-        </div>
+        <div
+            className={sidebar ? "backdrop backdrop--open" : "backdropbackdrop"}
+        ></div>
     )
 }
 
-export default Backdrop;
+export default Backdrop
